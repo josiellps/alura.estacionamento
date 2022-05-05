@@ -2,21 +2,31 @@
 using System;
 using System.Collections.Generic;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace Alura.Estacionamento.Tests
 {
-    public class PatioTeste
+    public class PatioTeste : IDisposable
     {
+        private Veiculo veiculo;
+        public ITestOutputHelper saidaConsoleTeste;
+        public PatioTeste(ITestOutputHelper testOutputHelper)
+        {
+            veiculo = new Veiculo();
+            saidaConsoleTeste = testOutputHelper;
+            saidaConsoleTeste.WriteLine("Construtor invocado.");
+        }
+
         [Fact]
         public void ValidaFaturamentoDeSomenteUmVeiculoPatio()
         {
             //Arranje
             Patio estacionamento = new Patio();
 
-            var veiculo = new Veiculo();
+            //var veiculo = new Veiculo();
             veiculo.Proprietario = "André Silva";
             veiculo.Placa = "ABC-0101";
-            veiculo.Modelo = "Fusca";    
+            veiculo.Modelo = "Fusca";
             veiculo.Acelerar(10);
             veiculo.Frear(5);
             estacionamento.RegistrarEntradaVeiculo(veiculo);
@@ -44,7 +54,7 @@ namespace Alura.Estacionamento.Tests
             //Arranje
             Patio estacionamento = new Patio();
 
-            var veiculo = new Veiculo();
+            //var veiculo = new Veiculo();
             veiculo.Proprietario = proprietario;
             veiculo.Placa = placa;
             veiculo.Cor = cor;
@@ -70,7 +80,7 @@ namespace Alura.Estacionamento.Tests
         {
             //Arrange
             Patio estacionamento = new Patio();
-            var veiculo = new Veiculo();
+            //var veiculo = new Veiculo();
             veiculo.Proprietario = proprietario;
             veiculo.Placa = placa;
             veiculo.Cor = cor;
@@ -86,7 +96,9 @@ namespace Alura.Estacionamento.Tests
             Assert.Equal(placa, consultado.Placa);
         }
 
-
-
+        public void Dispose()
+        {
+            saidaConsoleTeste.WriteLine("Dispose invocado.");
+        }
     }
 }
