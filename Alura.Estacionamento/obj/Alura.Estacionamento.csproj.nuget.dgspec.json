@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\andre\\OneDrive\\Documentos\\Projetos\\Aula03\\Alura.Estacionamento\\Alura.Estacionamento\\Alura.Estacionamento.csproj": {}
+    "C:\\Users\\Josiel\\Documents\\alura\\alura.estacionamento\\Alura.Estacionamento\\Alura.Estacionamento.csproj": {}
   },
   "projects": {
-    "C:\\Users\\andre\\OneDrive\\Documentos\\Projetos\\Aula03\\Alura.Estacionamento\\Alura.Estacionamento\\Alura.Estacionamento.csproj": {
+    "C:\\Users\\Josiel\\Documents\\alura\\alura.estacionamento\\Alura.Estacionamento\\Alura.Estacionamento.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\andre\\OneDrive\\Documentos\\Projetos\\Aula03\\Alura.Estacionamento\\Alura.Estacionamento\\Alura.Estacionamento.csproj",
+        "projectUniqueName": "C:\\Users\\Josiel\\Documents\\alura\\alura.estacionamento\\Alura.Estacionamento\\Alura.Estacionamento.csproj",
         "projectName": "Alura.Estacionamento",
-        "projectPath": "C:\\Users\\andre\\OneDrive\\Documentos\\Projetos\\Aula03\\Alura.Estacionamento\\Alura.Estacionamento\\Alura.Estacionamento.csproj",
-        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\andre\\OneDrive\\Documentos\\Projetos\\Aula03\\Alura.Estacionamento\\Alura.Estacionamento\\obj\\",
+        "projectPath": "C:\\Users\\Josiel\\Documents\\alura\\alura.estacionamento\\Alura.Estacionamento\\Alura.Estacionamento.csproj",
+        "packagesPath": "C:\\Users\\Josiel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Josiel\\Documents\\alura\\alura.estacionamento\\Alura.Estacionamento\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Josiel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +26,9 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "http://api.nuget.org/v3/index.json": {},
+          "https://localhost:44317/nuget": {}
         },
         "frameworks": {
           "net5.0": {
@@ -54,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300-preview.22204.3\\RuntimeIdentifierGraph.json"
         }
       }
     }
