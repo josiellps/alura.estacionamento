@@ -10,7 +10,7 @@ namespace Alura.Estacionamento.Tests
     {
         public ITestOutputHelper Output { get; }
         private Veiculo veiculo;
-    
+
         public VeiculoTeste(ITestOutputHelper output)
         {
             Output = output;
@@ -58,13 +58,13 @@ namespace Alura.Estacionamento.Tests
         {
             //Arrange
 
-            Patio estacionamento = new Patio();        
+            Patio estacionamento = new Patio();
             var veiculo = new Veiculo();
             veiculo.Proprietario = "José Silva";
             veiculo.Tipo = TipoVeiculo.Automovel;
             veiculo.Placa = "ZXC-8524";
             veiculo.Cor = "Verde";
-            veiculo.Modelo = "Opala";     
+            veiculo.Modelo = "Opala";
             estacionamento.RegistrarEntradaVeiculo(veiculo);
 
             var veiculoAlterado = new Veiculo();
@@ -79,7 +79,7 @@ namespace Alura.Estacionamento.Tests
             var alterado = estacionamento.AlteraDadosVeiculo(veiculoAlterado);
 
             //Assert
-            Assert.Equal(alterado.Cor,veiculoAlterado.Cor);
+            Assert.Equal(alterado.Cor, veiculoAlterado.Cor);
 
         }
 
@@ -100,5 +100,37 @@ namespace Alura.Estacionamento.Tests
             //Assert
             Assert.Contains("Ficha do Veículo", dadosveiculo);
         }
+
+        [Fact]
+        public void TestaNomeProprietarioVeiculoComMenosDeTresCaracteres()
+        {
+            //Arrange
+            string nomeProprietario = "Ab";
+
+            //Assert
+            Assert.Throws<System.FormatException>(
+                //Act
+                () => new Veiculo(nomeProprietario)
+            );
+        }
+
+        [Fact]
+        public void TestaMensagemDeExcecaoDoQuartoCaractereDaPlaca()
+        {
+            //Arrange
+            string placa = "ASD89874";
+            
+            //Act
+            var mensagem = Assert.Throws<FormatException>(
+                () => new Veiculo()
+                {
+                    Placa = placa
+                }
+            );
+
+            //Assert
+            Assert.Equal("O 4° caractere deve ser um hífen", mensagem.Message);
+        }
+
     }
 }

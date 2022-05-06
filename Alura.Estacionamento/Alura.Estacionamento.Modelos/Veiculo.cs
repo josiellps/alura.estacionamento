@@ -11,6 +11,10 @@ namespace Alura.Estacionamento.Modelos
         private string _placa;
         private string _proprietario;        
         private TipoVeiculo _tipo;
+        private string _ticket;
+
+        public string IdTicket { get; set;}
+        public string Ticket { get =>_ticket; set => _ticket = value; }
 
         //Propriedades
         public string Placa
@@ -81,8 +85,7 @@ namespace Alura.Estacionamento.Modelos
 
         }
         public DateTime HoraEntrada { get; set; }
-        public DateTime HoraSaida { get; set; }
-        public string IdTicket { get; set; }
+        public DateTime HoraSaida { get; set; }        
         public TipoVeiculo Tipo { get => _tipo; set => _tipo = value; }
 
         //Métodos
